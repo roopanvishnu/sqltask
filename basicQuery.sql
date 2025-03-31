@@ -18,6 +18,9 @@ SELECT Department, AVG(Salary) as AvgSalary
 FROM Employees_presidio
 GROUP BY Department;
 
+Select Location ,avg(Salary) as avgsalary from Departments 
+join Employees_presidio d on e.Department On e.Departments 
+
 
 SELECT e.FirstName, e.LastName, d.DeptName, d.Location
 FROM Employees_presidio e
@@ -37,3 +40,9 @@ WHERE Salary > (SELECT AVG(Salary) FROM Employees_presidio);
 SELECT FirstName, LastName, HireDate,
        DATEDIFF(day, HireDate, GETDATE()) as DaysEmployed
 FROM Employees_presidio;
+
+
+select d.Location , avg(Salary)as avgSalary
+from Employees_presidio e 
+join Departments d on e.Department = d.DeptName
+Group by d.Location;
