@@ -126,7 +126,14 @@ LEFT JOIN Employees e
 on d.DepartmentID = e.DepartmentID;
 -- Show a list of all employees and their assigned projects, including 
 -- employees who have not been assigned to any project.
-
+SELECT
+e.Firstname,
+e.LastName,
+p.ProjectName
+FROM Employees e 
+LEFT JOIN Employee_Projects ep 
+on ep.EmployeeID = e.EmployeeID
+LEFT JOIN Projects p on p.ProjectID = ep.ProjectID;
 -- Fetch all projects and list the employees working on them, ensuring 
 -- that projects without employees are also displayed.
 
